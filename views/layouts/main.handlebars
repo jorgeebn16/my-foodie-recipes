@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login | My Foddies Recipes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/icomoon.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div id="page">
+        <nav class="fh5co-nav" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-6">
+                        <div id="fh5co-logo"><a href="/">My Foddies Recipes</a></div>
+                    </div>
+                    <div class="col-md-8 col-xs-6 text-right menu-1">
+                        <ul>
+                            <li class="has-dropdown">
+                                <a href="/recipes">Recipes</a>
+                                <ul class="dropdown">
+                                    <li><a href="/recipes/category/Appetizers">Appetizers</a></li>
+                                    <li><a href="/recipes/category/Breakfast">Breakfast</a></li>
+                                    <li><a href="/recipes/category/Entree">Entrée</a></li>
+                                    <li><a href="/recipes/category/Dessert">Dessert</a></li>
+                                </ul>
+                            </li>
+                            {{#if loggedIn}}
+                            <li><a href="/dashboard">My Recipes</a></li>
+                            <li><a id="logout">Logout</a></li>
+                            {{else}}
+                            <li><a href="/login">Login</a></li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            {{{body}}}
+        </main>
+
+        <footer id="fh5co-footer" role="contentinfo">
+            <div class="container">
+
+                <div class="row copyright">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <class="block">My Foddies Recipes &copy;
+                                <script>document.write(new Date().getFullYear());</script>
+                                <p class="text text-center">
+                                Jorge Navarro</br>
+                                UCF© Full Stack Web Developer Boot Camp</small></br>
+
+                                <a href="mailto:jorgeebn16@gmail.com"> <i class="fas fa-envelope fa-3x"></i></a>
+                                <a href="https://github.com/jorgeebn16"> <i class="fab fa-github fa-3x"></i></a>
+                                <a href="https://www.linkedin.com/in/jorge-navarro-062b80190/"> <i class="fab fa-linkedin fa-3x"></i></a>
+                                <a href="https://twitter.com/JorgeEBN"> <i class="fab fa-twitter fa-3x"></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+    <script src="/javascript/jquery.min.js"></script>
+    <script src="/javascript/jquery.easing.1.3.js"></script>
+    <script src="/javascript/bootstrap.min.js"></script>
+    <script src="/javascript/main.js"></script>
+</body>
+
+</html>
