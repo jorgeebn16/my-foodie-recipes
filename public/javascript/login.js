@@ -4,7 +4,7 @@ async function signupFormHandler(event) {
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
-    if (username && password) {
+    if (username && password.length>=8) {
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
@@ -14,12 +14,17 @@ async function signupFormHandler(event) {
         headers: { 'Content-Type': 'application/json' }
       });
         if (response.ok) {
-            console.log('success');
+            console.log('User Signup Successful');
+            alert('User Signup Successful');
             document.location.replace('/dashboard');
-        } else {
-            alert(response.statusText);
-        }
+        } 
+        
+    }    
+    else { if (password.length<8) 
+      //alert(response.statusText);
+      alert("Password do not meet minimun requirements of 8 Characters. Please try using a new Password");
     }
+    
 }
 
 async function loginFormHandler(event) {
@@ -38,12 +43,16 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        console.log('success');
+        console.log('Login Successful');
+        alert('Login Successful');
         document.location.replace('/dashboard');
-      } else {
-        alert(response.statusText);
+      }  else {
+        //alert(response.statusText);
+        alert("Password or Username incorrect. Please try again");
       }
     }
+    
+    
 }
   
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);

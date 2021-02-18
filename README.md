@@ -96,6 +96,10 @@ npm start
 * [sequelize](https://sequelize.org/)
 * [JawsDB](https://www.jawsdb.com/)
 * [Sass](https://sass-lang.com/)
+* [icomoon](https://icomoon.io/)
+* [Animate](https://animate.style/)
+* [Animate](https://getbootstrap.com/)
+
 
 <br/>
 <br/>
